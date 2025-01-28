@@ -1,4 +1,4 @@
-pipeline {
+imellipipeline {
     agent any 
     tools {
         jdk 'jdk'
@@ -87,7 +87,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'my-git-pattoken', variable: 'git_token')]) {
                         sh '''
                             git config user.email "harikagoud789@gmail.com"
-                            git config user.name "harika"
+                            git config user.name "harikapelimelli"
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
                             sed -i "s#image:.*#image: $REPOSITORY_URI$AWS_ECR_REPO_NAME:$BUILD_NUMBER#g" backend-deployment.yaml
